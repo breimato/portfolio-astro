@@ -1,0 +1,70 @@
+---
+import Database from "../components/icons/Database.jsx";
+import Server from "../components/icons/Server.jsx";
+import Code from "../components/icons/Code.jsx";
+import GitBranch from "../components/icons/GitBranch.jsx";
+import Cloud from "../components/icons/Cloud.jsx";
+---
+
+<section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold mb-12 text-center">Habilidades Técnicas</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        {
+          icon: "code",
+          title: "Lenguajes",
+          skills: ["Python", "PHP", "JavaScript"],
+        },
+        {
+          icon: "server",
+          title: "Frameworks & Librerías",
+          skills: ["Django", "PyTest", "Laravel", "CodeIgniter", "Sphinx"],
+        },
+        {
+          icon: "database",
+          title: "Bases de Datos",
+          skills: ["MySQL", "PostgreSQL"],
+        },
+        {
+          icon: "cloud",
+          title: "Cloud & DevOps",
+          skills: ["Kibana"],
+        },
+        {
+          icon: "git",
+          title: "Herramientas",
+          skills: ["Git", "Postman", "Jira", "Scrum"],
+        },
+      ].map((category) => (
+        <div class="cursor-pointer transform hover:scale-[1.03] transition-transform">
+          <div class="border-primary/20 border rounded-lg h-full">
+            <div class="pb-2 p-4">
+              <div class="flex items-center gap-2 font-medium">
+                <span class="text-primary">
+                  {category.icon === "code" && <Code class="h-5 w-5" />}
+                  {category.icon === "server" && <Server class="h-5 w-5" />}
+                  {category.icon === "database" && <Database class="h-5 w-5" />}
+                  {category.icon === "cloud" && <Cloud class="h-5 w-5" />}
+                  {category.icon === "git" && <GitBranch class="h-5 w-5" />}
+                </span>
+                {category.title}
+              </div>
+              <p class="text-sm text-muted-foreground">Tecnologías que domino</p>
+            </div>
+            <div class="p-4">
+              <div class="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 dark:bg-secondary/60 dark:text-foreground">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

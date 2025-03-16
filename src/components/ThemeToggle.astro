@@ -1,0 +1,53 @@
+---
+import { Moon, Sun } from "lucide-react";
+---
+
+<button id="theme-toggle" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 p-0">
+  <Sun id="theme-sun" class="h-5 w-5 hidden" />
+  <Moon id="theme-moon" class="h-5 w-5" />
+  <span class="sr-only">Cambiar tema</span>
+</button>
+
+<script>
+  // Función para manejar el cambio de tema
+  function setupThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('theme-sun');
+    const moonIcon = document.getElementById('theme-moon');
+
+    // Revisar el tema guardado
+    const savedTheme = localStorage.getItem('theme');
+    
+    // Aplicar tema guardado o por defecto
+    if (savedTheme === 'light') {
+      document.documentElement.classList.remove('dark');
+      moonIcon.classList.add('hidden');
+      sunIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      sunIcon.classList.add('hidden');
+      moonIcon.classList.remove('hidden');
+    }
+
+    // Agregar el evento de clic para cambiar el tema
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      
+      if (isDark) {
+        localStorage.setItem('theme', 'dark');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+      } else {
+        localStorage.setItem('theme', 'light');
+        moonIcon.classList.add('hidden');
+        sunIcon.classList.remove('hidden');
+      }
+    });
+  }
+
+  // Ejecutar cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', setupThemeToggle);
+
+  // Para la navegación por SPA en Astro
+  document.addEventListener('astro:page-load', setupThemeToggle);
+</script>

@@ -1,0 +1,78 @@
+---
+import { Github, ExternalLink } from "lucide-react";
+---
+
+<section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+  <div class="container mx-auto max-w-6xl">
+    <h2 class="text-3xl font-bold mb-12 text-center">Proyectos Destacados</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          title: "Chillringo Infra",
+          description:
+            "Infraestructura como código para el proyecto Chillringo, implementando CI/CD con GitHub Actions y despliegue en AWS con Terraform.",
+          technologies: ["Terraform", "AWS", "GitHub Actions", "Infrastructure as Code"],
+          repoUrl: "https://github.com/breimato/chillringo-infra",
+        },
+        {
+          title: "Pokedex",
+          description:
+            "Aplicación web que consume la API de Pokémon para mostrar información detallada sobre diferentes Pokémon, sus tipos, habilidades y estadísticas.",
+          technologies: ["JavaScript", "React", "API REST", "CSS"],
+          repoUrl: "https://github.com/breimato/pokedex",
+        },
+        {
+          title: "Portfolio",
+          description:
+            "Sitio web personal que muestra mi experiencia, habilidades y proyectos. Diseñado con un enfoque moderno y responsivo.",
+          technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+          repoUrl: "https://github.com/breimato/portfolio",
+        },
+        {
+          title: "DownloadOrganizer",
+          description:
+            "Script en Python que organiza automáticamente los archivos de la carpeta de descargas, clasificándolos en subcarpetas según su tipo y facilitando la gestión de archivos.",
+          technologies: ["Python", "CLI", "File System"],
+          repoUrl: "https://github.com/breimato/DownloadOrganizer",
+        },
+        {
+          title: "ProCook",
+          description:
+            "Aplicación web para la gestión y búsqueda de recetas de cocina. Permite agregar, editar y buscar recetas, ofreciendo una experiencia sencilla para los usuarios.",
+          technologies: ["Python", "Flask", "PostgreSQL", "HTML", "CSS"],
+          repoUrl: "https://github.com/breimato/ProCook",
+        },
+      ].map((project) => (
+        <div class="h-full cursor-pointer transform hover:scale-[1.02] transition-transform">
+          <div class="border-primary/20 border rounded-lg h-full flex flex-col bg-card">
+            <div class="p-5">
+              <h3 class="font-semibold text-lg mb-2">{project.title}</h3>
+              <p class="text-muted-foreground text-sm mb-4">{project.description}</p>
+            </div>
+            <div class="p-5 pt-0 flex-grow">
+              <div class="flex flex-wrap gap-2 mb-4">
+                {project.technologies.map((tech) => (
+                  <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div class="p-5 flex justify-between border-t border-border">
+              <a 
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2"
+              >
+                <Github class="mr-2 h-4 w-4" />
+                Ver código
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

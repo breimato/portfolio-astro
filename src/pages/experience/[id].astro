@@ -1,0 +1,138 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ArrowLeft from "../../components/icons/ArrowLeft.jsx";
+import Building from "../../components/icons/Building.jsx";
+import Calendar from "../../components/icons/Calendar.jsx";
+import CheckCircle2 from "../../components/icons/CheckCircle2.jsx";
+import List from "../../components/icons/List.jsx";
+import Trophy from "../../components/icons/Trophy.jsx";
+import Briefcase from "../../components/icons/Briefcase.jsx";
+import { experiences } from "../../data/experiences";
+
+export function getStaticPaths() {
+  return experiences.map((experience) => ({
+    params: { id: experience.id },
+    props: { experience },
+  }));
+}
+
+const { experience } = Astro.props;
+---
+
+<Layout title={`${experience.position} en ${experience.company}`}>
+  <div class="min-h-screen">
+    <!-- Hero section con gradiente -->
+    <div class="bg-gradient-to-b from-primary/10 to-background py-16 px-4">
+      <div class="container mx-auto max-w-4xl">
+        <a
+          href="/#experience"
+          class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2"
+        >
+          <ArrowLeft class="mr-2 h-4 w-4" /> Volver a experiencias
+        </a>
+
+        <div class="mt-8">
+          <div class="flex gap-4 mb-2">
+            <div
+              class="bg-primary text-primary-foreground rounded-full w-14 h-14 flex items-center justify-center flex-shrink-0"
+            >
+              <Briefcase class="h-6 w-6" />
+            </div>
+            <div class="flex-1">
+              <h1 class="text-4xl font-bold mb-2">{experience.position}</h1>
+              <div
+                class="flex flex-col sm:flex-row gap-4 sm:items-center text-lg mb-4"
+              >
+                <div class="flex items-center">
+                  <span class="inline-block mr-2"
+                    ><Building class="h-5 w-5 mr-2 text-primary" /></span
+                  >
+
+                  <span class="font-medium">{experience.company}</span>
+                </div>
+                <div class="hidden sm:block text-muted-foreground">•</div>
+                <div class="flex items-center">
+                  <span class="inline-block mr-2">
+                    <Calendar class="h-5 w-5 text-primary" />
+                  </span>
+                  <span class="text-muted-foreground">{experience.period}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto max-w-4xl py-12 px-4 sm:px-6">
+      <div class="space-y-10">
+        <!-- Descripción detallada -->
+        <div class="bg-card border border-border rounded-lg p-8 shadow-sm">
+          <h2 class="text-2xl font-bold mb-6 pb-4 border-b border-border">
+            Descripción General
+          </h2>
+          <div class="prose prose-lg dark:prose-invert max-w-none">
+            <p>{experience.detailedDescription}</p>
+          </div>
+        </div>
+
+        <!-- Responsabilidades y Logros -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="bg-card border border-border rounded-lg p-8 shadow-sm">
+            <h2 class="text-xl font-bold mb-6 flex items-center text-primary">
+              <List class="h-6 w-6 mr-3" />
+              Responsabilidades
+            </h2>
+            <ul class="space-y-4">
+              {
+                experience.responsibilities.map((item) => (
+                  <li class="flex items-start group">
+                    <div class="bg-primary/10 p-1 rounded-full mr-3 mt-0.5 group-hover:bg-primary/20 transition-colors">
+                      <CheckCircle2 class="h-5 w-5 text-primary" />
+                    </div>
+                    <span class="text-muted-foreground">{item}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <div class="bg-card border border-border rounded-lg p-8 shadow-sm">
+            <h2 class="text-xl font-bold mb-6 flex items-center text-primary">
+              <Trophy class="h-6 w-6 mr-3" />
+              Logros
+            </h2>
+            <ul class="space-y-4">
+              {
+                experience.achievements.map((item) => (
+                  <li class="flex items-start group">
+                    <div class="bg-primary/10 p-1 rounded-full mr-3 mt-0.5 group-hover:bg-primary/20 transition-colors">
+                      <CheckCircle2 class="h-5 w-5 text-primary" />
+                    </div>
+                    <span class="text-muted-foreground">{item}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tecnologías -->
+        <div class="bg-card border border-border rounded-lg p-8 shadow-sm">
+          <h2 class="text-2xl font-bold mb-6 pb-4 border-b border-border">
+            Tecnologías utilizadas
+          </h2>
+          <div class="flex flex-wrap gap-3">
+            {
+              experience.technologies.map((tech) => (
+                <span class="bg-primary/10 text-primary px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/20 transition-colors">
+                  {tech}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,44 @@
+---
+import Building from '../components/icons/Building.jsx';
+import Calendar from '../components/icons/Calendar.jsx';
+import ArrowRight from '../components/icons/ArrowRight.jsx';
+import { experiences } from '../data/experiences';
+---
+
+<section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="container mx-auto max-w-4xl">
+    <h2 class="text-3xl font-bold mb-12 text-center">Experiencia Profesional</h2>
+
+    <div class="space-y-8">
+      {experiences.map((experience) => (
+        <div class="bg-card hover:bg-card/80 border border-border rounded-lg shadow-sm p-6 transition-all duration-200">
+          <div class="flex flex-col md:flex-row md:items-start justify-between mb-4">
+            <div>
+              <h3 class="text-xl font-semibold">{experience.position}</h3>
+              <div class="flex items-center gap-1 text-muted-foreground mt-1">
+                <Building className="h-4 w-4" />
+                <span>{experience.company}</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-muted-foreground mt-2 md:mt-0">
+              <Calendar className="h-4 w-4" />
+              <span>{experience.period}</span>
+            </div>
+          </div>
+
+          <p class="text-muted-foreground">{experience.description}</p>
+
+          <div class="mt-4">
+            <a 
+              href={`/experience/${experience.id}`}
+              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2"
+            >
+              Ver detalles
+              <ArrowRight className="h-4 w-4 ml-1" />
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
