@@ -1,5 +1,7 @@
 ---
-import { Mail, MessageSquare, Send } from "lucide-react";
+import { Mail, MessageSquare } from "lucide-react";
+import Gmail from "../components/icons/Gmail.jsx";
+import WhatsApp from "../components/icons/WhatsApp.jsx";
 ---
 
 <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
@@ -45,18 +47,22 @@ import { Mail, MessageSquare, Send } from "lucide-react";
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 px-8 flex-1"
             >
-              <Send class="mr-2 h-4 w-4" />
-              Abrir Gmail
+              <span class="flex-shrink-0 mr-2">
+                <Gmail class="h-4 w-4" />
+              </span>
+              Gmail
             </a>
 
             <a 
               href="https://wa.me/34663946460" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 flex-1"
+              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-green-600 text-white hover:bg-green-700 h-11 px-8 flex-1"
             >
-              <Send class="mr-2 h-4 w-4" />
-              Abrir WhatsApp
+              <span class="flex-shrink-0 mr-2">
+                <WhatsApp class="h-4 w-4" />
+              </span>
+              WhatsApp
             </a>
           </div>
         </div>

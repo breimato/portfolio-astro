@@ -4,6 +4,7 @@ import Server from "../components/icons/Server.jsx";
 import Code from "../components/icons/Code.jsx";
 import GitBranch from "../components/icons/GitBranch.jsx";
 import Cloud from "../components/icons/Cloud.jsx";
+import { skillCategories } from "../data/skills";
 ---
 
 <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
@@ -11,33 +12,7 @@ import Cloud from "../components/icons/Cloud.jsx";
     <h2 class="text-3xl font-bold mb-12 text-center">Habilidades Técnicas</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {[
-        {
-          icon: "code",
-          title: "Lenguajes",
-          skills: ["Python", "PHP", "JavaScript"],
-        },
-        {
-          icon: "server",
-          title: "Frameworks & Librerías",
-          skills: ["Django", "PyTest", "Laravel", "CodeIgniter", "Sphinx"],
-        },
-        {
-          icon: "database",
-          title: "Bases de Datos",
-          skills: ["MySQL", "PostgreSQL"],
-        },
-        {
-          icon: "cloud",
-          title: "Cloud & DevOps",
-          skills: ["Kibana"],
-        },
-        {
-          icon: "git",
-          title: "Herramientas",
-          skills: ["Git", "Postman", "Jira", "Scrum"],
-        },
-      ].map((category) => (
+      {skillCategories.map((category) => (
         <div class="cursor-pointer transform hover:scale-[1.03] transition-transform">
           <div class="border-primary/20 border rounded-lg h-full">
             <div class="pb-2 p-4">

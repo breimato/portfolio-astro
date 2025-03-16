@@ -12,6 +12,35 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: "huxley",
+    position: "Python Developer & Automation Specialist",
+    company: "Huxley",
+    period: "Enero 2025 - Actualidad",
+    description:
+      "Automatización mediante scripting en Python para comparaciones eficientes entre archivos Excel y desarrollo integral de un dashboard en Django para gestión centralizada.",
+    detailedDescription:
+      "En Huxley, utilicé Python para desarrollar scripts enfocados en automatizar comparaciones complejas entre múltiples archivos Excel, agilizando significativamente los tiempos y eliminando procesos manuales repetitivos. Además, lideré el desarrollo completo desde cero de un dashboard web en Django, permitiendo centralizar la ejecución, monitoreo y gestión de estos scripts. El dashboard incluía funcionalidades para visualización estadística de resultados, facilitando la toma de decisiones informadas y optimizando la productividad.",
+    responsibilities: [
+      "Desarrollar scripts en Python para automatización de comparaciones entre archivos Excel",
+      "Diseñar y construir un dashboard web centralizado usando Django",
+      "Implementar visualizaciones estadísticas para análisis de datos generados por los scripts",
+      "Asegurar la escalabilidad y eficiencia del dashboard para gestionar tareas automatizadas",
+    ],
+    achievements: [
+      "Reducción significativa del tiempo invertido en tareas manuales mediante automatización",
+      "Implementación exitosa de un dashboard centralizado que facilitó la gestión y visualización de estadísticas clave",
+    ],
+    technologies: [
+      "Python",
+      "Django",
+      "Pandas",
+      "OpenPyXL",
+      "JavaScript",
+      "HTML/CSS",
+      "Git",
+    ],
+  },
+  {
     id: "seresco",
     position: "Django Backend Developer",
     company: "Seresco",
@@ -73,4 +102,5 @@ export const experiences: Experience[] = [
       "Git",
     ],
   },
+  
 ];
