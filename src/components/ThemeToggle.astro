@@ -1,7 +1,7 @@
 ---
 ---
 
-<button id="theme-toggle" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 p-0">
+<button id="theme-toggle" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 p-0" data-theme-toggle>
   <svg 
     id="theme-sun"
     xmlns="http://www.w3.org/2000/svg" 
@@ -14,6 +14,7 @@
     stroke-linecap="round" 
     stroke-linejoin="round" 
     class="h-5 w-5 hidden"
+    data-theme-toggle-sun
   >
     <circle cx="12" cy="12" r="4"></circle>
     <path d="M12 2v2"></path>
@@ -38,6 +39,7 @@
     stroke-linecap="round" 
     stroke-linejoin="round" 
     class="h-5 w-5"
+    data-theme-toggle-moon
   >
     <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
   </svg>
@@ -48,9 +50,14 @@
 <script>
   // Función para manejar el cambio de tema
   function setupThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const sunIcon = document.getElementById('theme-sun');
-    const moonIcon = document.getElementById('theme-moon');
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    const moonIcon = document.querySelector('[data-theme-toggle-moon]');
+    const sunIcon = document.querySelector('[data-theme-toggle-sun]');
+
+    if (!themeToggle || !moonIcon || !sunIcon) {
+      console.error('Theme toggle elements not found');
+      return;
+    }
 
     // Revisar el tema guardado
     const savedTheme = localStorage.getItem('theme');
@@ -58,14 +65,12 @@
     // Aplicar tema guardado o por defecto
     if (savedTheme === 'light') {
       document.documentElement.classList.remove('dark');
-      // En modo claro, mostramos el icono de luna (para cambiar a oscuro)
-      moonIcon.classList.remove('hidden');
-      sunIcon.classList.add('hidden');
+      moonIcon.classList.add('hidden');
+      sunIcon.classList.remove('hidden');
     } else {
       document.documentElement.classList.add('dark');
-      // En modo oscuro, mostramos el icono de sol (para cambiar a claro)
-      sunIcon.classList.remove('hidden');
-      moonIcon.classList.add('hidden');
+      sunIcon.classList.add('hidden');
+      moonIcon.classList.remove('hidden');
     }
 
     // Agregar el evento de clic para cambiar el tema
@@ -74,14 +79,12 @@
       
       if (isDark) {
         localStorage.setItem('theme', 'dark');
-        // En modo oscuro, mostramos el icono de sol (para cambiar a claro)
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
       } else {
         localStorage.setItem('theme', 'light');
-        // En modo claro, mostramos el icono de luna (para cambiar a oscuro)
-        moonIcon.classList.remove('hidden');
-        sunIcon.classList.add('hidden');
+        moonIcon.classList.add('hidden');
+        sunIcon.classList.remove('hidden');
       }
     });
   }
