@@ -41,4 +41,18 @@ export const projects: Project[] = [
     technologies: ["Python", "Flask", "PostgreSQL", "HTML", "CSS"],
     repoUrl: "https://github.com/breimato/ProCook",
   },
+  {
+    title: "Video Compressor - Facebook Style",
+    description:
+      "Script de Python para comprimir videos a 720p con optimización de bitrate, manteniendo la estructura de carpetas y procesamiento multi-hilo para mayor velocidad.",
+    technologies: ["Python", "FFmpeg", "Multithreading", "Video Processing"],
+    repoUrl: "https://github.com/breimato/video-compressing",
+  },
+  {
+    title: "Calculadora de Interés Compuesto",
+    description:
+      "Calculadora web interactiva para calcular interés compuesto con visualización en tiempo real y gráficas interactivas. Disponible en español e inglés.",
+    technologies: ["TypeScript", "HTML", "CSS", "Astro", "Responsive Design"],
+    repoUrl: "https://github.com/breimato/calculadora-interes-compuesto",
+  }
 ];
