@@ -8,6 +8,7 @@ export default defineConfig({
     tailwind(),
     react()
   ],
-  site: 'https://portfolio.example.com',
+  base: '/portfolio/',
+  site: 'https://breimato.es/portfolio',
   output: 'static'
 });
