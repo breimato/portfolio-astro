@@ -7,6 +7,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "GuessDle",
+    description:
+      "Aplicación web para jugar Worddle de distintos temas: fútbol, League of Legends, One Piece, etc. La aplicación tiene un ranking de puntuaciones para que puedas jugar con tus amigos. Además, para añadir un juego más, solo hay que añadir un archivo JSON con los datos y lanzar un script. Reutilización de código y modularidad.",
+    technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
+    repoUrl: "https://github.com/breimato/GuessDle",
+  },
+  {
     title: "Chillringo Infra",
     description:
       "Infraestructura como código para el proyecto Chillringo, implementando CI/CD con GitHub Actions y despliegue en AWS con Terraform.",
