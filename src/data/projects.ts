@@ -14,6 +14,13 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/breimato/GuessDle",
   },
   {
+    title: "One Piece API",
+    description:
+      "API REST para obtener, crear, actualizar y eliminar información sobre los elementos del mundo de One Piece.",
+    technologies: ["Java", "Spring", "PostgreSQL", "REST", "MyBatis", "Docker"],
+    repoUrl: "https://github.com/breimato/OnePieceApi",
+  },
+  {
     title: "Chillringo Infra",
     description:
       "Infraestructura como código para el proyecto Chillringo, implementando CI/CD con GitHub Actions y despliegue en AWS con Terraform.",

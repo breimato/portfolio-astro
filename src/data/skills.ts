@@ -8,26 +8,26 @@ export const skillCategories: SkillCategory[] = [
   {
     icon: "code",
     title: "Lenguajes",
-    skills: ["Python", "PHP", "JavaScript"],
+    skills: ["Python", "Java", "PHP"],
   },
   {
     icon: "server",
     title: "Frameworks & Librerías",
-    skills: ["Django", "PyTest", "Laravel", "CodeIgniter", "Sphinx"],
+    skills: ["Spring", "MyBatis", "Django", "PyTest", "Laravel", "CodeIgniter", "Sphinx"],
   },
   {
     icon: "database",
     title: "Bases de Datos",
-    skills: ["MySQL", "PostgreSQL"],
+    skills: ["MySQL", "PostgreSQL", "Oracle", "SQLite"],
   },
   {
     icon: "cloud",
     title: "Cloud & DevOps",
-    skills: ["Kibana"],
+    skills: ["Kibana", "Docker", "Azure DevOps", "Ansible"],
   },
   {
     icon: "git",
     title: "Herramientas",
-    skills: ["Git", "Postman", "Jira", "Scrum"],
+    skills: ["Git", "GitHub", "Postman", "Jira", "Scrum"],
   },
 ];

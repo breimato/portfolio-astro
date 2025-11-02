@@ -20,52 +20,39 @@ const { experience } = Astro.props;
 ---
 
 <Layout title={`${experience.position} en ${experience.company}`}>
-  <div class="min-h-screen">
-    <!-- Hero section con gradiente -->
-    <div class="bg-gradient-to-b from-primary/10 to-background py-16 px-4">
-      <div class="container mx-auto max-w-4xl">
-        <a
-          href="/portfolio/#experience"
-          class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2"
-        >
-          <ArrowLeft class="mr-2 h-4 w-4" /> Volver a experiencias
-        </a>
+  <div class="min-h-screen bg-background">
+    <div class="container mx-auto max-w-4xl px-4 py-8">
+      <a
+        href="/portfolio/#experience"
+        class="group inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-6 space-x-4"
+      >
+        <ArrowLeft class="h-5 w-5 transition-transform group-hover:-translate-x-1" />
+        <span class="text-base font-medium">Volver a experiencias</span>
+      </a>
 
-        <div class="mt-8">
-          <div class="flex gap-4 mb-2">
-            <div
-              class="bg-primary text-primary-foreground rounded-full w-14 h-14 flex items-center justify-center flex-shrink-0"
-            >
-              <Briefcase class="h-6 w-6" />
-            </div>
-            <div class="flex-1">
-              <h1 class="text-4xl font-bold mb-2">{experience.position}</h1>
-              <div
-                class="flex flex-col sm:flex-row gap-4 sm:items-center text-lg mb-4"
-              >
-                <div class="flex items-center">
-                  <span class="inline-block mr-2"
-                    ><Building class="h-5 w-5 mr-2 text-primary" /></span
-                  >
-
-                  <span class="font-medium">{experience.company}</span>
-                </div>
-                <div class="hidden sm:block text-muted-foreground">•</div>
-                <div class="flex items-center">
-                  <span class="inline-block mr-2">
-                    <Calendar class="h-5 w-5 text-primary" />
-                  </span>
-                  <span class="text-muted-foreground">{experience.period}</span>
-                </div>
+      <div class="bg-card p-8 rounded-xl shadow-sm border mb-8">
+        <div class="flex gap-6 items-start">
+          <div class="bg-primary/10 p-3 rounded-full flex-shrink-0">
+            <Briefcase class="h-6 w-6 text-primary" />
+          </div>
+          <div class="flex-1">
+            <h1 class="text-4xl font-bold mb-2">{experience.position}</h1>
+            <div class="flex flex-col sm:flex-row gap-4 sm:items-center text-lg">
+              <div class="flex items-center space-x-2">
+                <Building class="h-5 w-5 text-primary flex-shrink-0" />
+                <span class="font-medium">{experience.company}</span>
+              </div>
+              <div class="hidden sm:block text-muted-foreground">•</div>
+              <div class="flex items-center space-x-2">
+                <Calendar class="h-5 w-5 text-primary flex-shrink-0" />
+                <span class="text-muted-foreground">{experience.period}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="container mx-auto max-w-4xl py-12 px-4 sm:px-6">
-      <div class="space-y-10">
+      <div class="space-y-6">
         <!-- Descripción detallada -->
         <div class="bg-card border border-border rounded-lg p-8 shadow-sm">
           <h2 class="text-2xl font-bold mb-6 pb-4 border-b border-border">
@@ -79,9 +66,9 @@ const { experience } = Astro.props;
         <!-- Responsabilidades y Logros -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div class="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h2 class="text-xl font-bold mb-6 flex items-center text-primary">
-              <List class="h-6 w-6 mr-3" />
-              Responsabilidades
+            <h2 class="text-xl font-bold mb-6 flex items-start text-primary space-x-3">
+              <List class="h-6 w-6 mr-3 flex-shrink-0" />
+              <span>Responsabilidades</span>
             </h2>
             <ul class="space-y-4">
               {
@@ -98,9 +85,9 @@ const { experience } = Astro.props;
           </div>
 
           <div class="bg-card border border-border rounded-lg p-8 shadow-sm">
-            <h2 class="text-xl font-bold mb-6 flex items-center text-primary">
-              <Trophy class="h-6 w-6 mr-3" />
-              Logros
+            <h2 class="text-xl font-bold mb-6 flex items-start text-primary space-x-3">
+              <Trophy class="h-6 w-6 mr-3 flex-shrink-0" />
+              <span>Logros</span>
             </h2>
             <ul class="space-y-4">
               {
@@ -132,7 +119,6 @@ const { experience } = Astro.props;
             }
           </div>
         </div>
-      </div>
     </div>
   </div>
 </Layout>

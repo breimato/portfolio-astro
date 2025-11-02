@@ -12,33 +12,40 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    id: "huxley",
-    position: "Python Developer & Automation Specialist",
-    company: "Huxley",
-    period: "Enero 2025 - Actualidad",
-    description:
-      "Automatización mediante scripting en Python para comparaciones eficientes entre archivos Excel y desarrollo integral de un dashboard en Django para gestión centralizada.",
-    detailedDescription:
-      "En Huxley, utilicé Python para desarrollar scripts enfocados en automatizar comparaciones complejas entre múltiples archivos Excel, agilizando significativamente los tiempos y eliminando procesos manuales repetitivos. Además, lideré el desarrollo completo desde cero de un dashboard web en Django, permitiendo centralizar la ejecución, monitoreo y gestión de estos scripts. El dashboard incluía funcionalidades para visualización estadística de resultados, facilitando la toma de decisiones informadas y optimizando la productividad.",
-    responsibilities: [
-      "Desarrollar scripts en Python para automatización de comparaciones entre archivos Excel",
-      "Diseñar y construir un dashboard web centralizado usando Django",
-      "Implementar visualizaciones estadísticas para análisis de datos generados por los scripts",
-      "Asegurar la escalabilidad y eficiencia del dashboard para gestionar tareas automatizadas",
+    "id": "huxley",
+    "position": "Software Engineer - DevOps",
+    "company": "Huxley",
+    "location": "Madrid, España",
+    "period": "Enero 2025 - Actualidad",
+    "description": "Desarrollo del portal de gestión de citas médicas (Java 21 + Spring, arquitectura hexagonal, SOLID y Clean Code) y automatización de procesos de RR. HH. con scripts en Python para validación/comparación de Excel.",
+    "detailedDescription": "Responsable del desarrollo completo del portal de citas médicas para empleados de ING con Java 21 y Spring, aplicando arquitectura hexagonal y buenas prácticas (SOLID, Clean Code). Definición de requerimientos, modelo de datos y dominio junto al cliente. Implementación de tests unitarios con enfoque Given–When–Then, alcanzando 100% de cobertura. Automatización de procesos de RR. HH. mediante scripts en Python para comparación y validación de múltiples ficheros Excel, reduciendo tiempos de trabajo de meses a minutos. Construcción de pipelines en Azure DevOps para cargas y transferencias de archivos en Windows y Linux, minimizando errores manuales. Uso diario de Oracle Database, OpenAPI Generator y MyBatis.",
+    "responsibilities": [
+      "Desarrollar el portal de gestión de citas médicas con Java 21 y Spring",
+      "Aplicar arquitectura hexagonal, principios SOLID y Clean Code",
+      "Definir requerimientos funcionales, modelo de datos y dominio con el cliente",
+      "Implementar tests unitarios con enfoque Given–When–Then y alta cobertura",
+      "Automatizar validaciones y comparaciones de Excel con Python",
+      "Diseñar pipelines en Azure DevOps para cargas y transferencias en Windows y Linux",
+      "Trabajar con Oracle Database, OpenAPI Generator y MyBatis"
     ],
-    achievements: [
-      "Reducción significativa del tiempo invertido en tareas manuales mediante automatización",
-      "Implementación exitosa de un dashboard centralizado que facilitó la gestión y visualización de estadísticas clave",
+    "achievements": [
+      "Portal de citas médicas entregado con buenas prácticas y arquitectura sólida",
+      "100% de cobertura en tests unitarios",
+      "Reducción de procesos manuales de meses a minutos mediante automatización en Python",
+      "Disminución de errores manuales gracias a pipelines de Azure DevOps"
     ],
-    technologies: [
+    "technologies": [
+      "Java 21",
+      "Spring",
       "Python",
-      "Django",
-      "Pandas",
-      "OpenPyXL",
-      "JavaScript",
-      "HTML/CSS",
+      "Oracle Database",
+      "MyBatis",
+      "OpenAPI Generator",
+      "Azure DevOps",
       "Git",
-    ],
+      "Windows",
+      "Linux"
+    ]
   },
   {
     id: "seresco",
